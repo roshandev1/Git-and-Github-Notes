@@ -191,14 +191,15 @@ You can configure Git using the `git config` command with different scopes:
 #### 🌍 Global Configuration
 Sets identity for **all repositories** on your system:
 
-```bash
+
 git config --global user.name "Your Name"
+
 git config --global user.email "your_email@example.com"
 
 #### 📁 Local Configuration
 Sets identity for **a specific repository** (omit `--global`):
 
-```bash
+
 git config user.name "Project-Specific Name"
 git config user.email "project_email@example.com"
 
@@ -209,8 +210,7 @@ Use **local configuration** when working with **multiple GitHub accounts** or **
 
 To check your Git config settings, use:
 
-```bash
-git config --list
+_git config --list_
 
 
 ## 📥 Cloning a Repository Using Git
@@ -245,8 +245,8 @@ This will copy the entire repository to your local system.
 
 After cloning (or making changes), use this command to check the status of your repository:
 
-```bash
-git status
+
+```git status```
 
 It shows:
 
@@ -278,8 +278,8 @@ These basic commands are essential for navigating and managing files in your ter
 Press the Tab key while typing a folder name to autocomplete it
 
 📄 Listing Files
-```bash
-ls : List files and directories in the current directory
+
+```ls``` : List files and directories in the current directory
 ls -a : List all files, including hidden files (those starting with a dot .)
 
 ## 📂 File States in Git
@@ -325,13 +325,13 @@ Files in Git can be in one of the following four states:
 
 To track new and modified files, add them to the Git staging area using:
 
-```bash
-git add <filename>
+
+```git add <filename>```
 
 Or to add **all files** in the working directory, use:
 
-```bash
-git add .
+
+```git add .```
 > The `.` command adds **all files** in the current directory.
 Once added, files are marked with an **"A"** sign, indicating they’ve been added to the staging area.
 
@@ -339,8 +339,9 @@ Once added, files are marked with an **"A"** sign, indicating they’ve been add
 
 A commit is a snapshot of your staged changes. Use:
 
-```bash
-git commit -m "meaningful message"
+
+```git commit -m "meaningful message"```
+
 ✅ Your message should clearly describe the changes made (e.g., `"fix new bug"`, `"add feature"`).
 
 After committing:
@@ -352,8 +353,8 @@ After committing:
 
 To upload local commits to the remote repository, use:
 
-```bash
-git push origin main
+
+```git push origin main```
 - `origin` is the name of the **remote repository** (default name when you clone a repo).
 - `main` is the name of the **branch** you’re pushing to (you’ll learn more about branches later).
 
@@ -523,15 +524,14 @@ By using Git branches, teams can collaborate efficiently, manage multiple featur
 - If you switch to another branch (e.g., `main`), changes in the other branch will **not** appear.
 - To bring those changes into another branch, you must **merge** them using:
 
-```bash
-git merge <branch_name>
+     ```git merge <branch_name>```
 
 ## ☁️ Pushing Changes to GitHub
 
 To push changes from a new branch to GitHub, use the command:
 
-```bash
-git push origin <branch_name>
+
+```git push origin <branch_name>```
 
 This will upload the contents of the branch to your remote GitHub repository, making it accessible to collaborators or for use in pull requests.
 
@@ -569,7 +569,7 @@ This will upload the contents of the branch to your remote GitHub repository, ma
 
 ### ⚠️ Resolving Conflicts
 
-- If your new branch and `main` have conflicts, GitHub won’t auto-merge.
+- If your new branch and main have conflicts, GitHub won’t auto-merge.
 - Conflicts must be resolved manually before the merge.
 
 ### 🧠 Best Practices
@@ -584,8 +584,8 @@ When changes have been made in the remote repository (e.g., GitHub) but aren't r
 
 ### 📥 Git Pull Command
 
-```bash
-git pull origin main
+
+```git pull origin main```
 
 This command fetches changes from the remote repository named origin and merges them into your local main branch.
 
@@ -606,8 +606,8 @@ By running this command, you'll synchronize your local codebase with the latest 
 - You create a new branch (`feature1`) and make different changes to the same file and line.
 - When you try to merge `feature1` into `main` using:
 
-  ```bash
-  git merge feature1
+  
+  ```git merge feature1```
 
 ## 🛠️ Resolving Merge Conflicts
 
@@ -627,7 +627,7 @@ VS Code provides a smart editor with the following options when a merge conflict
 You can also resolve merge conflicts manually by following these steps:
 
 1. Open the conflicted file and locate the conflict markers:
-   ```plaintext
+   ```bash
    <<<<<<< HEAD
    // current branch changes
    =======
@@ -652,16 +652,17 @@ Now your conflict is resolved and the merge can proceed successfully.
 ### 🧩 Case 1: Unstaging Changes
 
 - If you've staged changes using `git add` but haven't committed them yet, you can unstage them with:
-  ```bash
-  git reset <filename>
+  
+  ```git reset <filename>```
 
 This removes the file from the staging area. The changes remain in the working directory and are marked as modified.
 
-Case 2: Undoing the Last Commit
+### 🧩 Case 2: Undoing the Last Commit
 
 To undo the most recent commit but keep the changes in your working directory:
-```bash
-git reset HEAD~1
+
+```git reset HEAD~1```
+
 This moves the HEAD pointer back by one commit and unstages the changes.
 
 [🔁 Understanding HEAD
@@ -672,15 +673,16 @@ HEAD~1 moves back one commit.
 
 HEAD~2, HEAD~3, etc. move back multiple commits.]
 
-🗂️ Case 3: Undoing Multiple Commits
+### 🧩 Case 3: Undoing Multiple Commits
 
 Use the following command to reset to a specific previous commit:
-```bash
-git reset <commit_hash>
+
+```git reset <commit_hash>```
+
 This removes the commits from history but keeps the changes in your working directory.
 This will remove the commits from the log, but the changes will remain in your working directory.
 
-(You can find the commit hash using ```bash git log )
+(You can find the commit hash using ```git log``` )
 
 🧹 Removing Changes Completely :
 To remove all changes and reset your working directory to a specific commit:
@@ -691,3 +693,4 @@ git reset --hard <commit_hash>
 By using these commands, you can effectively undo changes, clean up your repository, and manage your Git history.
 
 # Great we have finished our Git and Github Tutorial
+# Thankyou 😄
