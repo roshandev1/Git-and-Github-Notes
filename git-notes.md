@@ -192,16 +192,17 @@ You can configure Git using the `git config` command with different scopes:
 Sets identity for **all repositories** on your system:
 
 
-git config --global user.name "Your Name"
+```git config --global user.name "Your Name"```
 
-git config --global user.email "your_email@example.com"
+```git config --global user.email "your_email@example.com"```
 
 #### 📁 Local Configuration
 Sets identity for **a specific repository** (omit `--global`):
 
-
+```bash
 git config user.name "Project-Specific Name"
 git config user.email "project_email@example.com"
+```
 
 By setting your **global configuration**, you'll use the same identity across **all Git projects**.  
 Use **local configuration** when working with **multiple GitHub accounts** or **collaborative/team-specific projects**.
@@ -210,7 +211,7 @@ Use **local configuration** when working with **multiple GitHub accounts** or **
 
 To check your Git config settings, use:
 
-_git config --list_
+```git config --list```
 
 
 ## 📥 Cloning a Repository Using Git
@@ -273,10 +274,10 @@ These basic commands are essential for navigating and managing files in your ter
   cd directory_name
 
 (Note: If your folder name has spaces, use quotes or backslash escape)
-
+```bash
 ⌨️ Autocomplete Tip:
 Press the Tab key while typing a folder name to autocomplete it
-
+```
 📄 Listing Files
 
 ```ls``` : List files and directories in the current directory
@@ -465,9 +466,9 @@ By following these steps, you can manage your project with Git and track changes
     ```bash
     git push -u origin main
     ```
-## ✔️ After Setting Upstream
-- You can now use `git push` without specifying the remote and branch.
-- Make changes, add, commit, and push using `git push`.
+    #### ✔️ After Setting Upstream
+     - You can now use `git push` without specifying the remote and branch.
+     - Make changes, add, commit, and push using `git push`.
 
 
 # 🌿 Git Branches in detail  :
@@ -563,7 +564,7 @@ This will upload the contents of the branch to your remote GitHub repository, ma
      ```
 
 2. **Using GitHub to Merge Code**
-   - **Create a Pull Request (PR)**: A PR lets you tell others about changes you've pushed to a branch.
+   - **Create a ```Pull Request (PR)```**: A PR lets you tell others about changes you've pushed to a branch.
    - **Code Review**: Senior developers can review and comment on your code before it's merged into the `main` branch.
    - **Merging a PR**: Once a PR is approved, the code can be merged into `main`.
 
@@ -686,11 +687,75 @@ This will remove the commits from the log, but the changes will remain in your w
 
 🧹 Removing Changes Completely :
 To remove all changes and reset your working directory to a specific commit:
-git reset --hard <commit_hash>
 
-⚠️ Warning: This will permanently discard changes not committed.
+```git reset --hard <commit_hash>```
+
+    ⚠️ Warning: This will permanently discard changes not committed.
 
 By using these commands, you can effectively undo changes, clean up your repository, and manage your Git history.
+
+
+## 🌱 Fork in GitHub
+### 📌 What is a Fork?
+A fork is a copy of a repository that you manage. Forking a repository allows you to freely experiment with changes without affecting the original project.
+
+It's commonly used to:
+
+- Propose changes to someone else's project.
+
+- Use someone else's project as a starting point for your own idea.
+
+- Contribute to open-source projects.
+
+### 🔁 How Forking Works
+#### When you fork a repository:
+
+- GitHub creates a copy of the original repo under your GitHub account.
+
+- You can clone it, make changes, commit, and push like you would with any repo.
+
+- If you want your changes to be added to the original project, you can open a pull request.
+
+#### 🛠️ How to Fork a Repository
+
+- Go to the repository you want to fork on GitHub.
+
+- Click the Fork button (usually in the top-right corner).
+
+- GitHub creates the fork and redirects you to the new forked version under your profile.
+
+#### 💡 Example Use Case
+Let’s say you want to contribute to an open-source project:
+
+- Fork the repo.
+
+- Clone it to your local machine.
+
+- Create a new branch and make your changes.
+
+- Push changes to your fork.
+
+- Open a pull request to the original repo.
+
+### 📷 Visual Workflow of Fork
+```bash
+Step 1: Clone your forked repo
+git clone https://github.com/your-username/project-name.git
+
+Step 2: Add original repo as a remote source
+git remote add upstream https://github.com/original-owner/project-name.git
+
+Step 3: Fetch latest changes from original repo
+git fetch upstream
+
+Step 4: Merge changes into your local repo
+git merge upstream/main
+
+Step 5: Push your changes
+git push origin main
+```
+
+
 
 # Great we have finished our Git and Github Tutorial
 # Thankyou 😄
